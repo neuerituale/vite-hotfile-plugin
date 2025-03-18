@@ -5,7 +5,7 @@ export default function viteHotfilePlugin(options = {}) {
 	const resolvedOptions = {
 		publicDirectory: 'public', // Default directory
 		hotFileName: 'vite.hot', // Default file name
-		logging: true, // Optional logging
+		logging: false, // Optional logging
 		...options,
 	};
 
