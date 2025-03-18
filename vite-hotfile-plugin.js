@@ -23,14 +23,14 @@ export default function viteHotfilePlugin(options = {}) {
 			fs.writeFileSync(hotFilePath, url);
 
 			if (resolvedOptions.logging) {
-				console.log(`[vite-plugin-hot-file] Hotfile created: ${hotFilePath}`);
+				console.log(`[vite-hotfile-plugin] Hotfile created: ${hotFilePath}`);
 			}
 		} catch (e) {
-			console.error(`[vite-plugin-hot-file] Error creating hotfile:`, e);
+			console.error(`[vite-hotfile-plugin] Error creating hotfile:`, e);
 		}
 	};
 
-	// Function to delete the hotfile
+	// Function to delete the hot file
 	const cleanupHotFile = () => {
 		if (fs.existsSync(hotFilePath)) {
 			fs.rmSync(hotFilePath);
@@ -38,7 +38,7 @@ export default function viteHotfilePlugin(options = {}) {
 	};
 
 	return {
-		name: 'vite-plugin-hot-file',
+		name: 'vite-hotfile-plugin',
 
 		configureServer(server) {
 			server.httpServer?.once('listening', () => {

@@ -1,6 +1,6 @@
 {
   "name": "vite-hotfile-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Vite Hot File Plugin creates a file (vite.hot by default) containing the development server's URL. This file is stored in the public directory and is automatically deleted when the server shuts down.",
   "main": "vite-hotfile-plugin.js",
   "keywords": [
