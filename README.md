@@ -6,8 +6,7 @@ This functionality is inspired by the [laravel-vite-plugin](https://github.com/l
 ## Key Features
 ✅ Generates a hotfile with the current server URL when Vite starts.  
 ✅ Ensures automatic cleanup on server shutdown (exit, SIGINT, SIGTERM, SIGHUP).  
-✅ Customizable options (directory, filename, logging).  
-✅ Prevents race conditions using fs.promises.rm() for safe file deletion.  
+✅ Customizable options (directory, filename, logging).
 
 This plugin is useful for tools or scripts that need access to the live server URL, ensuring a smooth development experience. 🚀
 
