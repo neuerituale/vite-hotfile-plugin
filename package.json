@@ -1,0 +1,28 @@
+{
+  "name": "vite-hotfile-plugin",
+  "version": "1.0.0",
+  "description": "The Vite Hot File Plugin creates a file (vite.hot by default) containing the development server's URL. This file is stored in the public directory and is automatically deleted when the server shuts down.",
+  "main": "vite-hotfile-plugin.js",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "hotfile"
+  ],
+  "homepage": "https://github.com/neuerituale/vite-hot-file#readme",
+  "bugs": {
+    "url": "https://github.com/neuerituale/vite-hot-file/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neuerituale/vite-hot-file.git"
+  },
+  "license": "MIT",
+  "author": "Neue Rituale",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "vite": "^6.2.2"
+  }
+}
