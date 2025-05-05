@@ -37,23 +37,26 @@ export default function viteHotfilePlugin(options = {}) {
 		}
 	};
 
+	// build url from server config
+	const buildUrl = () => {
+		const address = server.httpServer.address();
+		const protocol = server.config.server.https ? 'https' : 'http';
+
+		let host =
+			typeof server.config.server.host === 'string' && server.config.server.host !== '0.0.0.0'
+				? server.config.server.host
+				: 'localhost';
+
+		const port = typeof address === 'object' ? address.port : server.config.server.port;
+		return `${protocol}://${host}:${port}`;
+	};
+
 	return {
 		name: 'vite-hotfile-plugin',
 
 		configureServer(server) {
 			server.httpServer?.once('listening', () => {
-				const address = server.httpServer.address();
-				const protocol = server.config.server.https ? 'https' : 'http';
-
-				let host =
-					typeof server.config.server.host === 'string' && server.config.server.host !== '0.0.0.0'
-						? server.config.server.host
-						: 'localhost';
-
-				const port = typeof address === 'object' ? address.port : server.config.server.port;
-				const url = `${protocol}://${host}:${port}`;
-
-				createHotFile(url);
+				createHotFile(resolvedOptions?.url ?? buildUrl());
 			});
 
 			// Cleanup when the server shuts down
